@@ -49,7 +49,7 @@ installlog "7. Install a Custom --Nathan's-- Raspberry Pi Audio Receiver"
 Install="0"
 while true
 do
-	read -p "Which installation would you like to choose? (1/2/3/4/5/6) : " Install
+	read -p "Which installation would you like to choose? (1/2/3/4/5/6/[7]) : " Install
 	case "$Install" in
 	1)
 	# Car Installation - Previously Raspberry Pi Audio Receiver Install Car Install
@@ -138,7 +138,7 @@ do
 		#YesNo "Do you want to setup device as a UPnP Renderer? (y/n) : " && GMedia="y"
 		break
 	;;
-	2)
+	7)
 	# Custom Nathan's installation
 		AirPlay="y"
 		Bluetooth="y"
