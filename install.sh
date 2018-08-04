@@ -44,6 +44,7 @@ installlog "3. Install the Raspberry Pi Network Without Internet Installation (F
 installlog "4. Install the Bluetooth Only Installation"
 installlog "5. Install the Snapcast Installation (BETA), choose from Snapcast Server, Client, or Both (Requires Minor Configuration)"
 installlog "6. Install a Custom Raspberry Pi Audio Receiver"
+installlog "7. Install a Custom --Nathan's-- Raspberry Pi Audio Receiver"
 
 Install="0"
 while true
@@ -135,6 +136,18 @@ do
 		YesNo "Do you want to use a Sound Card? (y/n) : " && SoundCardInstall="y"
 		GMedia="n"
 		#YesNo "Do you want to setup device as a UPnP Renderer? (y/n) : " && GMedia="y"
+		break
+	;;
+	2)
+	# Custom Nathan's installation
+		AirPlay="y"
+		Bluetooth="y"
+		AP="n"
+		Kodi="n"
+		Lirc="n"
+		SoundCardInstall="n"
+		GMedia="n"
+		SNAPCAST="n"
 		break
 	;;
 	*)
