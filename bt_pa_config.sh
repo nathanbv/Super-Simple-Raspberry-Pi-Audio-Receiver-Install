@@ -97,9 +97,8 @@ exc sudo cp etc/pulse/daemon.conf /etc/pulse/daemon.conf
 
 save_original /boot/config.txt
 exc cat << EOT | sudo tee -a /boot/config.txt
- # Enable audio (loads snd_bcm2835)
- dtparam=audio=on
-
+# Enable audio (loads snd_bcm2835)
+dtparam=audio=on
 audio_pwm_mode=2
 EOT
 

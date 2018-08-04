@@ -140,12 +140,12 @@ do
 	;;
 	7)
 	# Custom Nathan's installation
-		AirPlay="y"
+		AirPlay="n"
 		Bluetooth="y"
 		AP="n"
 		Kodi="n"
 		Lirc="n"
-		SoundCardInstall="n"
+		SoundCardInstall="y"
 		GMedia="n"
 		SNAPCAST="n"
 		break
@@ -301,12 +301,9 @@ then
 		run su ${user} -c ./bt_pa_config.sh
 		sudo usermod -G "" $user
 		sed -i "s/$user ALL=(ALL) NOPASSWD: ALL/$user ALL=(ALL) ALL/" /etc/sudoers
-		for _dep in ${vol_groups[@]}; do     sudo usermod -aG "$_dep" volumio; done
+		for _dep in ${vol_groups[@]}; do sudo usermod -aG "$_dep" volumio; done
 	else
-	        run su ${user} -c ./bt_pa_config.sh
-		#for _dep in ${vol_groups[@]}; do     usermod -aG "$_dep" $user; done
-		
-
+	    run ./bt_pa_config.sh
 	fi
 
 fi
