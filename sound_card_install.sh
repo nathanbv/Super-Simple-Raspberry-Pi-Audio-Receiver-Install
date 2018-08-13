@@ -71,7 +71,6 @@ sudo cat <<EOT >> /boot/config.txt
 # Enable HiFiberry DAC Standard/Pro
 #dtoverlay=hifiberry-dacplus
 
-
 # Enable HiFiberry Digi
 #dtoverlay=hifiberry-digi
 
@@ -93,16 +92,17 @@ sudo cat <<EOT >> /boot/config.txt
 # Enable JustBoom Digi Cards
 #dtoverlay=justboom-digi
 EOT
+
 if [ "$SoundCard" != "0" ]
 then
 	save_original /boot/config.txt
     sed -i "s/dtparam=audio=on/#dtparam=audio=on/" /boot/config.txt
 fi
+
 if [ "$SoundCard" = "0" ]
 then
 save_original /etc/modprobe.d/alsa-base.conf
 echo "options snd_bcm2835 index=0" | sudo tee -a /etc/modprobe.d/alsa-base.conf
-
 elif [ "$SoundCard" = "1" ]
 then
 save_original /boot/config.txt
